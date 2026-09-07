@@ -1,0 +1,129 @@
+/* FlashCardComponent Specific Styles */
+/* Note: Main flashcard styles are in ../styles/FlashCard.css */
+
+.flashcard-wrapper {
+  width: 100%;
+  height: 100%;
+  max-width: 600px;
+  max-height: 400px;
+  margin: 0 auto;
+}
+
+/* Component-specific overrides and additions */
+.flashcard-side {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.flashcard-front {
+  background: linear-gradient(135deg, 
+    rgba(255, 255, 255, 0.95) 0%, 
+    rgba(255, 255, 255, 0.9) 100%);
+  color: #1f2937;
+}
+
+.flashcard-back {
+  background: linear-gradient(135deg, 
+    rgba(255, 255, 255, 0.95) 0%, 
+    rgba(255, 255, 255, 0.9) 100%);
+  color: #1f2937;
+  transform: rotateY(180deg);
+}
+
+.card-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #374151;
+}
+
+.flip-icon {
+  opacity: 0.6;
+  transition: opacity 0.2s ease;
+  color: #6b7280;
+}
+
+.flashcard:hover .flip-icon {
+  opacity: 1;
+}
+
+.flip-hint {
+  font-size: 0.8rem;
+  font-style: italic;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: #6b7280;
+}
+
+/* Component-specific hover effects */
+.flashcard:hover .flashcard-side {
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .flashcard-wrapper {
+    max-width: 100%;
+    max-height: 350px;
+  }
+  
+  .flashcard-side {
+    padding: 1.5rem;
+    border-radius: 16px;
+  }
+  
+  .card-content p {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  
+  .card-header {
+    margin-bottom: 1rem;
+  }
+  
+  .card-footer {
+    margin-top: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .flashcard-wrapper {
+    max-height: 300px;
+  }
+  
+  .flashcard-side {
+    padding: 1rem;
+    border-radius: 12px;
+  }
+  
+  .card-content p {
+    font-size: 0.95rem;
+  }
+  
+  .card-label {
+    font-size: 0.8rem;
+  }
+  
+  .flip-hint {
+    font-size: 0.75rem;
+  }
+}
+
+/* Animation for very smooth flipping */
+@media (prefers-reduced-motion: no-preference) {
+  .flashcard-inner {
+    transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+}
+
+/* Focus styles for accessibility */
+.flashcard:focus {
+  outline: none;
+}
+
+.flashcard:focus .flashcard-side {
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5), 0 15px 40px rgba(0, 0, 0, 0.4);
+}

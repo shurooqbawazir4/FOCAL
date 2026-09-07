@@ -1,0 +1,186 @@
+/* Global App Styles */
+.App {
+  text-align: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f3f4f6 0%, #e5e9f0 100%);
+}
+
+/* CSS Variables - Additional dashboard-specific variables */
+:root {
+  --primary: #6A11CB;
+  --secondary: #2575FC;
+  --success: #4cc9f0;
+  --danger: #f72585;
+  --warning: #f8961e;
+  --light: #f8f9fa;
+  --dark: #212529;
+  --gray: #6c757d;
+  --light-gray: #e9ecef;
+  --sidebar-width: 250px;
+  --header-height: 80px;
+}
+
+/* Dashboard Page Styles */
+.dashboard-container {
+  width: 100%;
+  max-width: none;
+  padding: 1rem;
+  margin: 0;
+}
+
+
+.welcome-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 140px);
+}
+
+.welcome-card {
+  background: white;
+  padding: 3rem;
+  border-radius: 24px;
+  box-shadow: 
+    0 25px 50px -12px rgba(0, 0, 0, 0.15),
+    0 8px 16px -8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 800px;
+  width: 100%;
+  border: 1px solid rgba(102, 126, 234, 0.1);
+}
+
+.welcome-card h1 {
+  color: #2c3e50;
+  margin-bottom: 20px;
+  font-size: 2.5em;
+}
+
+.welcome-card p {
+  color: #666;
+  margin-bottom: 15px;
+  font-size: 1.1em;
+}
+
+.user-type {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 15px;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+/* Dashboard Stats */
+.dashboard-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.stat-card {
+  background: linear-gradient(135deg, #f8f9ff 0%, #f1f3ff 100%);
+  padding: 1.5rem;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border: 1px solid rgba(102, 126, 234, 0.1);
+  transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.15);
+  border-color: rgba(102, 126, 234, 0.2);
+}
+
+.stat-icon {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.stat-info {
+  text-align: left;
+}
+
+.stat-info h3 {
+  color: #2c3e50;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.stat-info p {
+  color: #666;
+  font-size: 0.9rem;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .dashboard-container {
+    padding: 1rem;
+  }
+  
+  .welcome-card {
+    padding: 2rem 1.5rem;
+  }
+  
+  .welcome-card h1 {
+    font-size: 2em;
+  }
+  
+  .dashboard-stats {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .stat-card {
+    padding: 1rem;
+  }
+  
+  .stat-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard-container {
+    padding: 0.5rem;
+  }
+  
+  .welcome-section {
+    min-height: calc(100vh - 120px);
+  }
+  
+  .welcome-card {
+    padding: 1.5rem 1rem;
+  }
+  
+  .welcome-card h1 {
+    font-size: 1.8em;
+  }
+  
+  .stat-card {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.75rem;
+  }
+  
+  .stat-info {
+    text-align: center;
+  }
+  
+}
